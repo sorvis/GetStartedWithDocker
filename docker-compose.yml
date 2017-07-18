@@ -1,7 +1,7 @@
 version: "3"
 services:
   web:
-    # replace sorvis/get-started:part1 with your name and image details
+    # replace username/repo:tag with your name and image details
     image: sorvis/get-started:part1
     deploy:
       replicas: 5
@@ -9,11 +9,11 @@ services:
         limits:
           cpus: "0.1"
           memory: 50M
-        restart_policy:
-          condition: on-failure
-      ports:
-        - "80:80"
-      networks:
-        - webnet
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+    networks:
+      - webnet
 networks:
   webnet:
